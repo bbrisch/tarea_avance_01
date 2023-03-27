@@ -131,27 +131,11 @@ def maquina_de_inferencia(input1: float, input2: float, reglas: list, n: int = 4
             # print(regla, activacion,)
 
             pertenencia = interfaz_difusion(i, regla["salida"])
-            # print(
-            #     "i",
-            #     i,
-            #     "\tregla",
-            #     regla["salida"],
-            #     "\tactivación",
-            #     activacion,
-            #     "\tpertenencia",
-            #     pertenencia,
-            #     "\tactivación de regla",
-            #     pertenencia if pertenencia < activacion else activacion,
-            # )
             aux.append(pertenencia if pertenencia < activacion else activacion)
-        # print("\n")
 
         cdm_ += i * max(aux)  # Consideramos solo la máxima activación
         acum += max(aux)
-        # print(max(aux), i * max(aux))
-        # print(acum, cdm_)
-        # break
-    print(cdm_, acum)
+
     # Retornamos el centro de masa
     return cdm_ / acum if acum != 0 else 0
 
