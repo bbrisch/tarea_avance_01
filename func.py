@@ -87,7 +87,6 @@ def base_reglas(input1: float, input2: float, reglas: list):
     E1 = []
     E2 = []
     Salida = []
-    S_conj = []
 
     # Iteramos por las reglas
     for regla in reglas:
