@@ -28,7 +28,7 @@ def interfaz_difusion(input: float, conjunto: list) -> float:
     elif input < conjunto[2]:  # caso en el que el numero está en el punto máximo
         return 1
 
-    elif input < conjunto[3]:  # caso cuando el número entra a la segunda pendiente
+    elif input <= conjunto[3]:  # caso cuando el número entra a la segunda pendiente
         return (input - conjunto[3]) / (conjunto[2] - conjunto[3])
     else:
         return 0
@@ -52,7 +52,7 @@ def de_a(conjunto1: list, conjunto2: list) -> list:
         zip(conjunto1, conjunto2)
     ):  # iteramos para obtener el ínidice, el elemnto de c1 y el elemento de c2
 
-        if i < 3:  # caso para las dos primeras iteraciones (inicio del trapecio)
+        if i < 2:  # caso para las dos primeras iteraciones (inicio del trapecio)
             output.append(min(n1, n2))
 
         else:
