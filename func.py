@@ -141,19 +141,3 @@ def maquina_de_inferencia(input1: float, input2: float, reglas: list, n: int = 4
 
     # Retornamos el centro de masa
     return cdm_ / acum if acum != 0 else 0
-
-
-# ============================ Funciones extra ============================================
-
-# Fución para graficar conjuntos difusos
-def graficar_conjunto_difuso(mu, conjunto, n=43):
-    """
-    Función que grafica los conjuntos difusos definidos por una función de pertenencia
-    """
-    eje = np.linspace(-1, 1, n)
-    pertenencia = [mu(x, conjunto) for x in eje]
-
-    # return px.scatter(x=eje, y=pertenencia)
-    # return eje, pertenencia
-
-    return go.Scatter(x=eje, y=pertenencia)
