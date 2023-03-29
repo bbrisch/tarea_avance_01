@@ -29,7 +29,11 @@ def interfaz_difusion(input: float, conjunto: list) -> float:
         return 1
 
     elif input <= conjunto[3]:  # caso cuando el número entra a la segunda pendiente
-        return (input - conjunto[3]) / (conjunto[2] - conjunto[3])
+        return (
+            (input - conjunto[3]) / (conjunto[2] - conjunto[3])
+            if conjunto[2] - conjunto[3] != 0
+            else 1
+        )
     else:
         return 0
 
